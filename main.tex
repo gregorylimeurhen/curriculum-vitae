@@ -1,21 +1,19 @@
-\documentclass[10pt]{extarticle}
+\documentclass[11pt]{extarticle}
 \pagenumbering{gobble}
-
+\usepackage{times}
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage[colorlinks=true, allcolors=MidnightBlue]{hyperref}
 \usepackage[dvipsnames]{xcolor}
-
 \usepackage{titlesec}
-\titleformat*{\section}{\scshape}
-\titleformat*{\subsection}{\normalfont}
-
+	\titleformat*{\section}{\scshape}
+	\titleformat*{\subsection}{\normalfont}
 \usepackage{enumitem}
-\setlist{nosep}
-
+	\setlist{nosep,leftmargin=*}
 \usepackage{parskip}
-
 \newcommand{\NAME}[1]{
-	{\bf #1}
+	\begin{center}
+		\large{#1}
+	\end{center}
 }
 \newcommand{\SECTION}[1]{
 	\section*{#1\quad\leaders\hrule\hfill}
@@ -34,39 +32,40 @@
 		\makebox[\textwidth]{\small #3\hfill#4}%
 	}
 }
-
 \title{}
 \author{}
 \date{}
-
 \begin{document}
 
 \NAME{Gregory Lim Eu Rhen}
 
+\vspace{4pt}
+
 \begin{minipage}[t]{0.45\textwidth}
 	E-mail: \href{mailto:gregorylimeurhen@gmail.com}{gregorylimeurhen@gmail.com}
 
-	Website: \href{https://gregorylimeurhen.github.io}{http://gregorylimeurhen.github.io}
+	Website: \href{https://gregorylimeurhen.github.io}{gregorylimeurhen.github.io}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.55\textwidth}
-	GitHub: \href{https://github.com/gregorylimeurhen}{http://github.com/gregorylimeurhen}
+	\raggedleft
+	GitHub: \href{https://github.com/gregorylimeurhen}{github.com/gregorylimeurhen}
 
-	LinkedIn: \href{https://linkedin.com/in/gregorylimeurhen}{http://linkedin.com/in/gregorylimeurhen}
+	LinkedIn: \href{https://linkedin.com/in/gregorylimeurhen}{linkedin.com/in/gregorylimeurhen}
 \end{minipage}
 
 % Accomplished [X] as measured by [Y], by doing [Z].
 % [verb]'d a [noun] (that [blank] (to [blank])) to [blank]
 \SECTION{Experiences}
 \LRLR
-{Creatz3D}
+{Creatz3D and Figure Factories}
 {May 2025 to Sep 2025}
 {AI Intern}
 {Singapore}
 \begin{itemize}
-	\item Trained a novel GraphSAGE-style neural network on proprietary data to efficiently thicken meshes. % figure factories
-	\item Built an ``agentic'' system to automatically fetch publicly accessible data---from Google, LinkedIn, Roblox, X/Twitter, and YouTube---and generate Shopify blog posts. % figure factories
-	\item Set up a platform to allow users on the same network to privately chat with language models.
+	\item Trained and tested graph neural networks on proprietary data to efficiently thicken meshes. % figure factories
+	\item Set up AI orchestrations using n8n to continually generate image-enriched Shopify blog posts using Google, LinkedIn, Roblox, X (Twitter), and YouTube data. % figure factories
+	\item Set up a UI for interacting with (large) language models on private local networks.
 	% \item Built a tool to allow users to naturally prompt language models to complete web-based tasks using local web browsers.
 	% \item Built a tool to allow users to privately edit videos. % figure factories
 	% \item Built a tool that allows users to efficiently import Roblox Studio models in bulk from Roblox identifiers. % figure factories
@@ -74,26 +73,25 @@
 \LRLR
 {Singapore University of Technology and Design}
 {Jan 2025 to Apr 2025}
-{Volunteer Teaching Assistant}
+{Teaching Assistant}
 {Singapore}
 \begin{itemize}
-	\item Volunteered to help teach first-year courses on linear algebra and multivariable calculus.
+	\item Volunteered to assist teaching first-year undergraduate multivariable calculus and linear algebra.
 \end{itemize}
 
 \SECTION{Projects}
 \begin{itemize}
-	\item Training a planning-based world model to play Hexanexus.
-	\item Introduced a novel dreaming-inspired neural network component.
+	\item Introduced \textit{replay regularized attention}, a family of dreaming-inspired learning algorithms that aims to regularise feature representations by sampling and blending feature maps from a memory buffer during training.
 	\begin{itemize}
-		\item Trained and evaluated a R50+ViT-B/16 on STEAD to accurately detect earthquake signals with and without the component.
-		\item Trained and evaluated a MobileNetV2 on a curated waste dataset to accurately detect object recyclability with and without the component.
+		\item Trained and tested models on the Stanford Earthquake Dataset to accurately detect earthquake signals with and without the attention.
+		\item Trained and tested models on a curated waste dataset to accurately detect object recyclability with and without the attention.
 	\end{itemize}
-	\item Introduced a novel, computationally efficient, and auxiliary-model-free decoding method.
+	\item Introduced \textit{vibe decoding}, a 1-hyperparameter generalisation of greedy decoding for autoregressive language models that aims to efficiently give a model semantic foresight by preferring next tokens which align with the expected semantic direction of the model in embedding space.
 	\begin{itemize}
-		\item Ablated the decoding method against the greedy decoding method using Qwen 2.5 0.5B, Gemma 2 2B Instruct, and Llama 3.1 8B Instruct on standard BoolQ, NumerSense, PG-19, and WikiText tasks.
-		\item Studied a possible failure mode of the decoding method related to embedding space isotropy.
+		\item Characterised the asymptotic runtime of the method, and the hyperparameter interval for which the method behaves identically to greedy decoding.
+		\item Tested Qwen 2.5 0.5B Instruct, Gemma 2 2B Instruct, and Llama 3.1 8B Instruct on standard BoolQ, NumerSense, PG-19, and WikiText dataset tasks to observe how Macro F1, MRR, and PPL change with different hyperparameter values.
+		\item Studied a possible failure mode of the method related to embedding space isotropy.
 	\end{itemize}
-	\item Introduced a multi-armed bandit algorithm family for landing fee revenue and emission management at Changi Airport.
 \end{itemize}
 
 \SECTION{Education}
@@ -106,21 +104,17 @@
 	\item \textbf{Cocurriculars.} Galois Group Mathematics Club, 3DC Google Developer Student Club.
 \end{itemize}
 \LRLR
-{Stanford University}
-{Sep 2024 to Dec 2024}
-{Exchange, Computer Science}
-{United States}
-\LRLR
 {University of British Columbia}
 {Jul 2023 to Aug 2023}
 {Exchange, Linguistics and English History}
 {Canada}
-\begin{itemize}
-	\item \textbf{Course average.} 92.5/100. % 92.5 = (88+97)/2
-\end{itemize}
+% \begin{itemize}
+% 	\item \textbf{Course average.} 92.5/100. % 92.5 = (88+97)/2
+% \end{itemize}
 
-\SECTION{Languages}
+\SECTION{Skills}
 \begin{itemize}
+	\item \textbf{Deep learning frameworks.} Pytorch, TensorFlow.
 	\item \textbf{Natural languages.} English, Chinese, Esperanto, Malay.
 	\item \textbf{Source code languages.} C, CSS, HTML, Javascript, Jupyter Notebook, Lua, Makefile, Python, Shell, TeX, VBA.
 \end{itemize}
