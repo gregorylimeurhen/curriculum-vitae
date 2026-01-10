@@ -1,8 +1,8 @@
-\documentclass[11pt]{extarticle}
+\documentclass[12pt]{extarticle}
 \pagenumbering{gobble}
 \usepackage{times}
 \usepackage[a4paper,margin=1in]{geometry}
-\usepackage[colorlinks=true, allcolors=MidnightBlue]{hyperref}
+\usepackage[colorlinks=true,allcolors=MidnightBlue]{hyperref}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{titlesec}
 	\titleformat*{\section}{\scshape}
@@ -16,20 +16,20 @@
 	\end{center}
 }
 \newcommand{\SECTION}[1]{
-	\section*{#1\quad\leaders\hrule\hfill}
+	\section*{
+		\raisebox{-2pt}{#1}
+		\quad\leaders\hrule\hfill
+	}
 }
 \newcommand{\LR}[2]{
 	\subsection*{
-		\leavevmode
 		\makebox[\textwidth]{\textbf{#1}\hfill#2}%
 	}
 }
 \newcommand{\LRLR}[4]{
 	\subsection*{
-		\leavevmode
 		\makebox[\textwidth]{\textbf{#1}\hfill#2}
-		\\
-		\makebox[\textwidth]{\small #3\hfill#4}%
+		\makebox[\textwidth]{#3\hfill#4}%
 	}
 }
 \title{}
@@ -40,7 +40,6 @@
 \NAME{Gregory Lim Eu Rhen}
 
 \vspace{4pt}
-
 \begin{minipage}[t]{0.45\textwidth}
 	E-mail: \href{mailto:gregorylimeurhen@gmail.com}{gregorylimeurhen@gmail.com}
 
@@ -76,7 +75,7 @@
 {Teaching Assistant}
 {Singapore}
 \begin{itemize}
-	\item Volunteered to assist teaching first-year undergraduate multivariable calculus and linear algebra.
+	\item Volunteered to help teach first-year undergraduate multivariable calculus and linear algebra.
 \end{itemize}
 
 \SECTION{Projects}
@@ -86,11 +85,12 @@
 		\item Trained and tested models on the Stanford Earthquake Dataset to accurately detect earthquake signals with and without the attention.
 		\item Trained and tested models on a curated waste dataset to accurately detect object recyclability with and without the attention.
 	\end{itemize}
-	\item Introduced \textit{vibe decoding}, a 1-hyperparameter generalisation of greedy decoding for autoregressive language models that aims to efficiently give a model semantic foresight by preferring next tokens which align with the expected semantic direction of the model in embedding space.
+	\item Introduced \textit{vibe decoding}, a 1-hyperparameter generalization of greedy decoding for autoregressive language models that aims to impart efficient semantic foresight by preferring next tokens which align with the expected semantic direction of the model in embedding space.
 	\begin{itemize}
-		\item Characterised the asymptotic runtime of the method, and the hyperparameter interval for which the method behaves identically to greedy decoding.
-		\item Tested Qwen 2.5 0.5B Instruct, Gemma 2 2B Instruct, and Llama 3.1 8B Instruct on standard BoolQ, NumerSense, PG-19, and WikiText dataset tasks to observe how Macro F1, MRR, and PPL change with different hyperparameter values.
-		\item Studied a possible failure mode of the method related to embedding space isotropy.
+		\item Characterised the asymptotic runtime of the method.
+		\item Characterised the hyperparameter interval for which the decoding becomes greedy.
+		\item Tested instruction-tuned Qwen 2.5 0.5B, Gemma 2 2B, and Llama 3.1 8B on BoolQ, NumerSense, PG-19, and WikiText tasks using Macro F1, MRR, and PPL across various hyperparameter values.
+		\item Studied a possible failure mode of the method relating to embedding space isotropy.
 	\end{itemize}
 \end{itemize}
 
@@ -108,9 +108,9 @@
 {Jul 2023 to Aug 2023}
 {Exchange, Linguistics and English History}
 {Canada}
-% \begin{itemize}
-% 	\item \textbf{Course average.} 92.5/100. % 92.5 = (88+97)/2
-% \end{itemize}
+\begin{itemize}
+	\item \textbf{Course average.} 92.5/100. % 92.5 = (88+97)/2
+\end{itemize}
 
 \SECTION{Skills}
 \begin{itemize}
@@ -123,7 +123,7 @@
 \begin{itemize}
 	\item Lim, Gregory.
 	(2025).
-	``Galois Parsimony.''
+	\textit{Galois Parsimony.}
 	Preprint.
 	\href{https://philarchive.org/rec/LIMGPD}{http://philarchive.org/rec/LIMGPD}
 \end{itemize}
@@ -133,7 +133,7 @@
 	\item \textit{50.040 Theory and Practice of Deep Learning Top Projects}, Singapore University of Technology and Design, 2025.
 	\item \textit{Singtel Information Systems and Programming First Prize}, Singtel, 2024.
 	\item \textit{10.015 Physical World 1D Project Award}, Singapore University of Technology and Design, 2022.
-	\item \textit{Top 6 Players by Fame}, Realm of the Mad God, 2022.
+	% \item \textit{Top 6 Players by Fame}, Realm of the Mad God, 2022.
 	\item \textit{Malay (Special Programme) Top in Cohort}, Temasek Secondary School, 2018.
 	\item \textit{Math and Science Book Prize}, Temasek Secondary School, 2017.
 \end{itemize}
